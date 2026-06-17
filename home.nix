@@ -15,7 +15,12 @@ in
   home.homeDirectory = "/home/shani";
   home.stateVersion = "26.05";
 
-  programs.git.enable = true;
+  programs.git = {
+  enable = true;
+  userName = "ShaniLime";
+  userEmail = "92034736+shanilime@users.noreply.github.com";
+  };
+
 
   programs.bash = {
     enable = true;
@@ -35,6 +40,7 @@ in
   programs.fzf.enable = true;
   programs.zoxide.enable = true;
   programs.zsh.syntaxHighlighting.enable = true;
+  programs.gh.enable = true;
 
   home.packages = with pkgs; [
     neovim
@@ -58,5 +64,7 @@ in
     obs-studio
     anydesk
     rustdesk
+    virt-manager
+
   ];
 }
