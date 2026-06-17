@@ -20,6 +20,7 @@ in
   settings = {
     user.name = "ShaniLime";
     user.email = "92034736+shanilime@users.noreply.github.com";
+    init.defaultBranch = "main";
     };
   };
 
