@@ -68,6 +68,8 @@ in
     anydesk
     rustdesk
     virt-manager
+    telegram-desktop
+    claude-code
 
   ];
 }
