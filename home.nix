@@ -17,8 +17,10 @@ in
 
   programs.git = {
   enable = true;
-  userName = "ShaniLime";
-  userEmail = "92034736+shanilime@users.noreply.github.com";
+  settings = {
+    user.name = "ShaniLime";
+    user.email = "92034736+shanilime@users.noreply.github.com";
+    };
   };
 
 
