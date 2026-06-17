@@ -17,11 +17,11 @@ in
   home.stateVersion = "26.05";
 
   programs.git = {
-  enable = true;
-  settings = {
-    user.name = "ShaniLime";
-    user.email = "92034736+shanilime@users.noreply.github.com";
-    init.defaultBranch = "main";
+    enable = true;
+    settings = {
+      user.name = "ShaniLime";
+      user.email = "92034736+shanilime@users.noreply.github.com";
+      init.defaultBranch = "main";
     };
   };
 
@@ -42,7 +42,10 @@ in
 
   programs.zsh.enable = true;
   programs.fzf.enable = true;
-  programs.zoxide.enable = true;
+  programs.zoxide = {
+    enable = true;
+    options = [ "--cmd cd" ];
+  };
   programs.zsh.syntaxHighlighting.enable = true;
   programs.gh.enable = true;
 
@@ -73,5 +76,6 @@ in
     mpv
     discord
     tree-sitter
+    obsidian
   ];
 }
