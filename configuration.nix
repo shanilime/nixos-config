@@ -40,7 +40,18 @@
     extraGroups = [ "wheel" "networkmanager" "input" ];
   };
 
+  virtualisation.libvirtd = {
+  enable = true;
+  qemu.vhostUserPackages = with pkgs; [ virtiofsd ];
+  };
+  users.groups.libvirtd.members = ["shani"];
+  programs.virt-manager.enable = true;
+  services.qemuGuest.enable = true;
+  services.spice-vdagentd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
+
   programs.kdeconnect.enable = true;
+
   networking.firewall = rec {
   allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
   allowedUDPPortRanges = allowedTCPPortRanges;
@@ -52,6 +63,7 @@
     git
     pciutils
     tree
+    dnsmasq
   ];
 
   services.xserver.excludePackages = with pkgs; [

@@ -7,6 +7,7 @@ let
   configs = {
     nvim = "nvim";
     alacritty = "alacritty";
+    mpv = "mpv";
   };
 in
 
@@ -67,9 +68,10 @@ in
     obs-studio
     anydesk
     rustdesk
-    virt-manager
     telegram-desktop
     claude-code
-
+    mpv
+    discord
+    tree-sitter
   ];
 }
