@@ -25,14 +25,6 @@ in
     };
   };
 
-
-  programs.bash = {
-    enable = true;
-    shellAliases = {
-      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos";
-    };
-  };
-
   xdg.configFile = builtins.mapAttrs
     (name: subpath: {
       source = create_symlink "${dotfiles}/${subpath}";
@@ -40,13 +32,34 @@ in
     })
     configs;
 
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+
+    #historySubstringSearch.enable = true;
+
+    shellAliases = {
+      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos";
+    };
+
+    oh-my-zsh = {
+      enable = true;
+      theme = "robbyrussell";
+      plugins = [ "git" "history-substring-search" ];
+    };
+
+    syntaxHighlighting = {
+      enable = true;
+    };
+
+    autosuggestion = {
+      enable = true;
+    };
+  };
   programs.fzf.enable = true;
   programs.zoxide = {
     enable = true;
     options = [ "--cmd cd" ];
   };
-  programs.zsh.syntaxHighlighting.enable = true;
   programs.gh.enable = true;
 
   home.packages = with pkgs; [
@@ -77,5 +90,6 @@ in
     discord
     tree-sitter
     obsidian
+    jdk21
   ];
 }
