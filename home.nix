@@ -74,12 +74,9 @@ in
     firefox
     unzip
     zip
-    yt-dlp
     alacritty
     vscode
-    prismlauncher
     recaf-launcher
-    osu-lazer
     qbittorrent
     obs-studio
     anydesk
@@ -90,6 +87,11 @@ in
     discord
     tree-sitter
     obsidian
+    prismlauncher
     jdk21
+    kdePackages.kdialog
+    android-tools
+    python3
+    lua51Packages.luarocks
   ];
 }

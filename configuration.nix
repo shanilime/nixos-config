@@ -72,7 +72,11 @@
     pciutils
     tree
     dnsmasq
+    xclip
   ];
+
+  programs.throne.enable = true;
+  programs.throne.tunMode.enable = true;
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     qrca # Qrca - сканер QR-кодов
@@ -96,6 +100,8 @@
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];
+
+  networking.nftables.enable = true;
 
   system.stateVersion = "26.05";
 }
